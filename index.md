@@ -5,5 +5,5 @@ subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
 ```
 reverse whois search
 ```powershell
-https://www.whoxy.com/tripadvisor.com
+https://www.whoxy.com/[domain]
 ```
