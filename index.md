@@ -7,3 +7,5 @@ reverse whois search
 ```powershell
 https://www.whoxy.com/[domain]
 ```
+
+script to search sensitive js data
