@@ -11,11 +11,15 @@ Resolve IP Addresses In A Subnet Range
 ```powershell
 subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
 ```
-Subdomain Enumeration One Line Command
+Subdomain Enumeration Commands
 ```powershell
-(subfinder -d example.com && assetfinder -subs-only example.com && amass enum -passive -d example.com) | sort -u > domains.txt
+subfinder -d [domain] -all
+assetfinder -subs-only [domain]
+amass enum -d [domain] -active
+amass enum -d [domain] -passive
 ```
 Subdomain Permutation Bruteforce
 ```powershell
-cat out | dnsgen - | httpx -probe -sc -cl -td -ip -fr | grep "SUCCESS"
+cat domains.txt | dnsgen - | massdns -r ~/Desktop/tools/massdns/lists/resolvers.txt -t A -o S -w livesubs
+sed 's/A.*//' livesubdomains.messy | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
 ```
