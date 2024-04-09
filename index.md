@@ -7,5 +7,9 @@ reverse whois search
 ```powershell
 https://www.whoxy.com/[domain]
 ```
+subdomain enumeration one line command
+```powershell
+(subfinder -d example.com && assetfinder -subs-only example.com && amass enum --passive -d example.com) | sort -u > domains.txt
+```
 
 script to search sensitive js data
