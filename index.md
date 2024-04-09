@@ -1,19 +1,19 @@
 ## [](#header-2) Enumeration / Recon
-Resolve IP Addresses In A Subnet Range
+Burp Regex for Scope Control
 ```powershell
-subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
+.*\.frontapp\..*$
 ```
 Reverse Whois Search
 ```powershell
 https://www.whoxy.com/[domain]
 ```
+Resolve IP Addresses In A Subnet Range
+```powershell
+subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
+```
 Subdomain Enumeration One Line Command
 ```powershell
 (subfinder -d example.com && assetfinder -subs-only example.com && amass enum -passive -d example.com) | sort -u > domains.txt
-```
-Burp Regex for Scope Control
-```powershell
-.*\.frontapp\..*$
 ```
 Subdomain Permutation Bruteforce
 ```powershell
