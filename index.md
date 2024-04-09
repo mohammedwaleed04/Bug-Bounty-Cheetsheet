@@ -5,7 +5,7 @@ Burp Regex for Scope Control
 ```
 Reverse Whois Search
 ```powershell
-https://www.whoxy.com/[domain]
+https://www.whoxy.com/example.com
 ```
 Resolve IP Addresses In A Subnet Range
 ```powershell
@@ -13,13 +13,18 @@ subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
 ```
 Subdomain Enumeration Commands
 ```powershell
-subfinder -d [domain] -all
-assetfinder -subs-only [domain]
-amass enum -d [domain] -active
-amass enum -d [domain] -passive
+subfinder -d example.com -all
+assetfinder -subs-only example.com
+amass enum -d example.com -active
+amass enum -d example.com -passive
 ```
-Subdomain Permutation Bruteforce
+Subdomain Bruteforce
+```powershell
+~/Desktop/tools/subbrute/subbrute.py example.com
+~/Desktop/tools/subbrute/subbrute.py -s ~/Desktop/tools/massdns/lists/names.txt example.com
+```
+Subdomain Permutations
 ```powershell
 cat domains.txt | dnsgen - | massdns -r ~/Desktop/tools/massdns/lists/resolvers.txt -t A -o S -w livesubs
-sed 's/A.*//' livesubdomains.messy | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
+sed 's/A.*//' livesubs | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
 ```
