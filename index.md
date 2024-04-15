@@ -1,7 +1,7 @@
 ## [](#header-2) Enumeration / Recon
 Burp Regex for Scope Control
 ```powershell
-.*\.frontapp\..*$
+.*\.example\..*$
 ```
 Reverse Whois Search
 ```powershell
@@ -31,4 +31,8 @@ sed 's/A.*//' livesubs | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
 Extract A records for the given list of subdomains
 ```powershell
 dnsx -l testsubs -silent -a -resp-only
+```
+HTTPX Command
+```powershell
+httpx -l final -probe -sc -cl -td -ip -fr -p 80,443,8080 | grep "SUCCESS"
 ```
