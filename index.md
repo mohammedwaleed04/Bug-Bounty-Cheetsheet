@@ -11,6 +11,10 @@ Resolve IP Addresses In A Subnet Range
 ```powershell
 subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
 ```
+Extract A records for the given list of subdomains
+```powershell
+dnsx -l testsubs -silent -a -resp-only
+```
 Subdomain Enumeration Commands
 ```powershell
 subfinder -d example.com -all
@@ -27,10 +31,6 @@ Subdomain Permutations
 ```powershell
 cat domains.txt | dnsgen - | dnsx -silent
 sed 's/A.*//' livesubs | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
-```
-Extract A records for the given list of subdomains
-```powershell
-dnsx -l testsubs -silent -a -resp-only
 ```
 HTTPX Command
 ```powershell
