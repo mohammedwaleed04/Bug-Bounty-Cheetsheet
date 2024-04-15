@@ -25,6 +25,10 @@ Subdomain Bruteforce
 ```
 Subdomain Permutations
 ```powershell
-cat domains.txt | dnsgen - | massdns -r ~/Desktop/tools/massdns/lists/resolvers.txt -t A -o S -w livesubs
+cat domains.txt | dnsgen - | dnsx -silent
 sed 's/A.*//' livesubs | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
+```
+Extract A records for the given list of subdomains
+```powershell
+dnsx -l testsubs -silent -a -resp-only
 ```
