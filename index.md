@@ -7,6 +7,17 @@ Reverse Whois Search
 ```powershell
 https://www.whoxy.com/example.com
 ```
+Pulling root domains
+```powershell
+Whoxy Reverse Whois API
+
+cat asn.txt | tlsx -san -cn -silent -resp-only | grep -v "example.com"
+
+amass intel -asn 3389
+
+https://crt.sh
+cat crt | jq -r '.[].common_name' | sed 's/\*\.\(.*\)/\1/' | rev | cut -d "." -f 1,2 | rev | grep -v " " | sort -u
+```
 Resolve IP Addresses In A Subnet Range
 ```powershell
 subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
