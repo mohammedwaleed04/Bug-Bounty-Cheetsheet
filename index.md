@@ -21,6 +21,7 @@ cat crt | jq -r '.[].common_name' | sed 's/\*\.\(.*\)/\1/' | rev | cut -d "." -f
 Resolve IP Addresses In A Subnet Range
 ```powershell
 subnet.py [subnet range] | httpx -probe -sc -cl -td -fr | grep "SUCCESS"
+xargs -a asn -I {} bash -c 'subnet.py {} | httpx -l final -probe -title -sc -cl -td -ip -fr -p 80,443,8080,8888,8000,8008 | grep "SUCCESS"'
 ```
 Extract A records for the given list of subdomains
 ```powershell
