@@ -45,5 +45,5 @@ sed 's/A.*//' livesubs | sed 's/CN.*//' | sed 's/\..$//' > domains.resolved
 ```
 HTTPX Command
 ```powershell
-httpx -l final -probe -sc -cl -td -ip -fr -p 80,443,8080,8888,8000,8008 | grep "SUCCESS"
+httpx -l final -probe -title -sc -cl -td -ip -fr -p 80,443,8080,8888,8000,8008 | grep "SUCCESS"
 ```
