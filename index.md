@@ -3,6 +3,10 @@ Burp Regex for Scope Control
 ```powershell
 .*\.example\..*$
 ```
+Find Emails
+```powershell
+https://phonebook.cz/
+```
 Reverse Whois Search
 ```powershell
 https://www.whoxy.com/example.com
