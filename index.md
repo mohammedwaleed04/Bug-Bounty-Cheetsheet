@@ -11,6 +11,10 @@ Reverse Whois Search
 ```powershell
 https://www.whoxy.com/example.com
 ```
+Find Domains Hosted On The Same IP Address
+```powershell
+https://api.hackertarget.com/reverseiplookup/?q=example.com
+```
 Pulling root domains
 ```powershell
 Whoxy Reverse Whois API
