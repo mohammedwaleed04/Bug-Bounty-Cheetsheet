@@ -54,5 +54,5 @@ httpx -l final -probe -title -sc -cl -td -ip -fr -p 80,443,8080,8888,8000,8008 |
 ```
 Find Important Keywords In A List Of Subdomains Or Urls
 ```powershell
-isubs.sh fordsubs2alive
+isubs.sh file.txt
 ```
