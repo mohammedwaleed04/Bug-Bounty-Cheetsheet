@@ -62,5 +62,7 @@ isubs.sh file.txt
 ```
 ## [](#header-2) Sqli
 Basic Sql query: `SELECT * FROM products WHERE category = 'Gifts' AND released = 1`
+
 Basic Sqli Payload: `https://insecure-website.com/products?category=Gifts'--`
+
 SQL injection cheat sheet: `https://portswigger.net/web-security/sql-injection/cheat-sheet`
