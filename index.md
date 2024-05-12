@@ -79,7 +79,7 @@ Query: `SELECT name, description FROM products WHERE category = 'Gifts'`
 
 Payload: `' UNION SELECT username, password FROM users--`
 
-## [](#header-4) SQL injection UNION attacks
+#SQL injection UNION attacks
 
 The UNION keyword enables you to execute one or more additional SELECT queries and append the results to the original query. For example: `SELECT a, b FROM table1 UNION SELECT c, d FROM table2`
 
