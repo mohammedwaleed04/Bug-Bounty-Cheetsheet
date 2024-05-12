@@ -61,7 +61,7 @@ Find Important Keywords In A List Of Subdomains Or Urls
 isubs.sh file.txt
 ```
 ## [](#header-2) Sqli
-SQL injection cheat sheet: `https://portswigger.net/web-security/sql-injection/cheat-sheet`
+SQL injection cheat sheet: https://portswigger.net/web-security/sql-injection/cheat-sheet
 
 Basic Query: `SELECT * FROM products WHERE category = 'Gifts' AND released = 1`
 
