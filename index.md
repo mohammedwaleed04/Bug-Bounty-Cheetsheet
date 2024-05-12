@@ -83,4 +83,4 @@ SQL injection UNION attacks
 
 The UNION keyword enables you to execute one or more additional SELECT queries and append the results to the original query. For example: `SELECT a, b FROM table1 UNION SELECT c, d FROM table2`
 
-Determining the number of columns: `' ORDER BY 1--` or `' UNION SELECT NULL,NULL--` (note: number of nulls = number of columns)
+Determining the number of columns: `' ORDER BY 1--` or `' UNION SELECT NULL,NULL--` (note: number of nulls, order by = number of columns)
